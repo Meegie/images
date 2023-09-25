@@ -15,7 +15,7 @@ RUN apt install libgcc1 libc++-dev gdb libc6 git wget curl tar zip unzip binutil
 RUN apt install cabextract iproute2 net-tools netcat telnet libatomic1 libsdl1.2debian libsdl2-2.0-0 -y
 RUN apt install libfontconfig icu-devtools libunwind8 libssl-dev sqlite3 libsqlite3-dev -y
 RUN apt install locales ffmpeg gnupg2 apt-transport-https software-properties-common ca-certificates tzdata -y
-RUN apt install liblua5.3 libz-dev rapidjson-dev  -y
+RUN apt install libz-dev rapidjson-dev  -y
 
 RUN adduser -D -h /home/container container
 
