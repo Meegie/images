@@ -10,8 +10,8 @@ export INTERNAL_IP
 cd /home/container || exit 1
 
 # Print Node.js version
-printf "\033[1m\033[33mcontainer@Meegie~ \033[0mnode -v\n"
-node -v
+# printf "\033[1m\033[33mcontainer@Meegie~ \033[0mnode -v\n"
+# node -v
 
 # Convert all of the "{{VARIABLE}}" parts of the command into the expected shell
 # variable format of "${VARIABLE}" before evaluating the string and automatically
