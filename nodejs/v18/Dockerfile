@@ -17,12 +17,14 @@ RUN apt install libfontconfig icu-devtools libunwind8 libssl-dev sqlite3 libsqli
 RUN apt install locales ffmpeg gnupg2 apt-transport-https software-properties-common ca-certificates tzdata -y
 RUN apt install libz-dev rapidjson-dev  -y
 
-RUN adduser -D -h /home/container container
+COPY        entrypoint.sh /entrypoint.sh
 
-USER        container
+RUN chmod +x /entrypoint.sh
+
+RUN adduser -D -h /home/container container
 ENV         USER=container HOME=/home/container
+USER        container
 WORKDIR     /home/container
 
-COPY        ./entrypoint.sh /entrypoint.sh
-
-CMD ["/bin/bash", "/entrypoint.sh"]
+ENTRYPOINT [ "/bin/bash" ]
+CMD ["/entrypoint.sh"]
